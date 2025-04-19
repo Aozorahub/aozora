@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<head>
+    <link rel="icon" href="https://i.imgur.com/z2N6ycx.png" type="image/png">
+  </head>  
+<html lang="ja" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Aozora Club</title>
+    <style>
+        .developer-image {
+            width: 100px; /* 画像の幅 */
+            height: 100px; /* 画像の高さ */
+            overflow: hidden; /* はみ出した部分を隠す */
+            border-radius: 50%; /* 丸くする */
+            display: flex; /* 中央揃え */
+            justify-content: center; /* 中央揃え */
+            align-items: center; /* 中央揃え */
+        }
+
+        .developer-image img {
+            width: 100%; /* 幅を100%に */
+            height: auto; /* 高さは自動調整 */
+            object-fit: cover; /* 画像をフィットさせる */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2><a href="https://e-z.bio/ftap" target="_blank" rel="noopener noreferrer">Aozora Club</a></h2>
+        <div class="mid-spot" onclick="document.body.classList.toggle('gold');"></div>
+        <button class="contact-btn" onclick="joinDiscord()">
+            <span class="glow"></span>
+            <span class="contact-btn-content">Join Discord</span>
+        </button>
+        <div class="spotlight">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <div class="accent-lines">
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="heroSubP">
+        <p>Aozora Club Join Now?</p>
+    </div>
+    <div class="hero">
+        <div class="heroT">
+            <h2>Aozoraclub</h2>
+            <h2>Aozoraclub</h2>
+        </div>
+    </div>
+    <p class="heroP">セカイのAozoraがここに集まる。 <br>
+    <div class="mountains">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="hero-spacer"></div>
+
+    <div class="content-section">
+        <div class="content-acc">
+            <div></div>
+            <div></div>
+        </div>
+        <p class="subt">Revolutionize Roblox</p>
+        <h3 class="title">Would you like to create <br>
+            a script together?</h3>
+        <p class="subp">Join Discord now and experience pleasure like never before. <br></p>
+    </div>
+
+    <div class="developer-section">
+        <div class="developer-card">
+            <div class="glow-effect"></div>
+            <div class="developer-card-inner">
+                <div class="developer-card-front">
+                    <div class="developer-image">
+                        <img src="https://i.pinimg.com/736x/c5/a2/6d/c5a26df1e7b9f223431117a332955b70.jpg" alt="Developer Photo">
+                    </div>
+                    <h3>Developer</h3>
+                    <p>xt._.tx (907888040339443773)</p>
+                    <div class="particle-dots"></div>
+                </div>
+                <div class="developer-card-back">
+                    <div class="holographic-overlay"></div>
+                    <h3>Skills</h3>
+                    <ul>
+                        <li><span>✦</span> Py/lua/luaU/C#/C++ Development</li>
+                        <li><span>✦</span> UI Design</li>
+                        <li><span>✦</span> Game Development</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://discord.com/invite/y6W2DFQRGh" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <img src="https://brandlogos.net/wp-content/uploads/2021/11/discord-logo.png" alt="Discord" width="24" height="24">
+                        </a>
+                        <a href="https://e-z.bio/ftap" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <img src="https://icon-library.com/images/site-icon/site-icon-10.jpg" alt="Website" width="24" height="24">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- OGP (English version) -->
+<meta property="og:title" content="Aozora Club | Creative Roblox Organization from Japan" />
+<meta property="og:description" content="Aozoraclub is a Japanese creative group on Roblox, focused on game development, scripting, and community building." />
+<meta property="og:image" content="https://i.imgur.com/NfhQq6I.png" />
+<meta property="og:url" content="https://www.a-f.top/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Project Aozora Club" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Aozoraclub | Creative Roblox Organization from Japan" />
+<meta name="twitter:description" content="Japanese Roblox group focused on creative innovation and collaborative development." />
+<meta name="twitter:image" content="https://i.imgur.com/NfhQq6I.png" />
+<meta name="twitter:url" content="https://www.a-f.top/" />
+
+<script>
+    const targetText = "Aozora Club";
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+    let iterations = 0;
+    
+    function hackerTitle() {
+        let displayed = "";
+        for (let i = 0; i < targetText.length; i++) {
+            if (i < iterations) {
+                displayed += targetText[i];
+            } else {
+                displayed += chars[Math.floor(Math.random() * chars.length)];
+            }
+        }
+    
+        document.title = displayed;
+    
+        if (iterations < targetText.length) {
+            iterations++;
+            setTimeout(hackerTitle, 100); // 文字が現れる速度
+        } else {
+            // 完成後も定期的にもう一度やるなら↓
+            setTimeout(() => {
+                iterations = 0;
+                hackerTitle();
+            }, 500); // 3秒後に再アニメーション
+        }
+    }
+    
+    hackerTitle();
+    </script>
+  
+  <!-- Firebase SDKを追加 -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
