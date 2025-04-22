@@ -3,11 +3,10 @@ body {
     overflow: hidden;
     background: #000;
     font-family: 'Space Mono', monospace;
-    color: #fff;
+    color: white;
 }
 
 canvas {
-    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -18,119 +17,53 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    height: 100vh;
 }
 
 .holographic-display {
     background: rgba(0, 0, 0, 0.7);
     border: 1px solid #5865F2;
     border-radius: 10px;
-    padding: 30px;
-    max-width: 500px;
+    padding: 2rem;
     text-align: center;
-    box-shadow: 0 0 20px #5865F2;
+    max-width: 500px;
+    width: 90%;
 }
 
-.portal-header h1 {
-    margin: 0 0 10px 0;
-    font-size: 1.8rem;
-}
-
-.portal-header p {
-    margin: 0;
-    opacity: 0.8;
-}
-
-.discord-widget {
-    margin: 1.5rem 0;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.countdown-display {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin: 20px auto;
-}
-
-.quantum-circle {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 3px solid #5865F2;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.countdown-number {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.countdown {
     font-size: 3rem;
+    margin: 2rem 0;
 }
 
-.redirect-message {
-    margin-top: 1rem;
-    font-size: 0.95rem;
-    opacity: 0.85;
-}
-
-.quantum-button {
+.join-button {
     background: #5865F2;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 0.8rem 1.5rem;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: 0.3s;
-    margin-top: 20px;
+    transition: background 0.3s;
 }
 
-.quantum-button:hover {
+.join-button:hover {
     background: #4752C4;
 }
 
-.wormhole-effect {
+.wormhole {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000;
+    background: black;
     opacity: 0;
-    z-index: 100;
+    z-index: 10;
     transition: opacity 1s;
 }
 
-.status-display {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    font-size: 0.9rem;
-    opacity: 0.7;
-}
-
-.status-indicator {
-    width: 10px;
-    height: 10px;
-    background-color: #4CAF50;
-    border-radius: 50%;
-    margin-right: 8px;
-    animation: pulse-opacity 2s infinite;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(88, 101, 242, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(88, 101, 242, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(88, 101, 242, 0); }
-}
-
-@keyframes pulse-opacity {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
+.discord-widget {
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow: hidden;
 }
