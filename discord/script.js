@@ -1,7 +1,7 @@
 // Configuration
 const config = {
-    discordUrl: "https://discord.gg/EXAMPLE",
-    serverId: "YOUR_SERVER_ID",
+    discordUrl: "https://discord.gg/ftap",
+    serverId: "1278024817752150016",
     countdownFrom: 5
 };
 
