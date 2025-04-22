@@ -1,13 +1,28 @@
 const config = {
     discordUrl: "https://discord.gg/ftap",
     countdownStart: 5,
-    particleCount: 150
+    particleCount: 150,
+    serverId: "1278024817752150016" 
 };
 
 let countdown = config.countdownStart;
 const countdownElement = document.getElementById('countdown');
 const instantBtn = document.getElementById('instant-jump');
 const wormhole = document.getElementById('wormhole');
+
+// Discord Widget を動的に読み込む
+function loadDiscordWidget() {
+    const widgetContainer = document.querySelector('.discord-widget');
+    widgetContainer.innerHTML = `
+        <iframe
+            src="https://discord.com/widget?id=${config.serverId}&theme=dark"
+            width="350"
+            height="400"
+            allowtransparency="true"
+            frameborder="0"
+        ></iframe>
+    `;
+}
 
 function updateCountdown() {
     countdownElement.textContent = countdown;
@@ -31,6 +46,7 @@ instantBtn.addEventListener('click', () => {
     initiateWormhole();
 });
 
+// パーティクルアニメーション
 const canvas = document.getElementById('quantum-portal');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -78,5 +94,13 @@ function animateParticles() {
     requestAnimationFrame(animateParticles);
 }
 
+// 初期化
+loadDiscordWidget(); // Discord Widget を読み込み
 animateParticles();
 updateCountdown();
+
+// ウィンドウリサイズ時にCanvasを調整
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
