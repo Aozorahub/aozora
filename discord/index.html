@@ -3,47 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Our Discord Server</title>
+    <title>Discord Server Join</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
     <canvas id="quantum-portal"></canvas>
-
     <div class="portal-container">
         <div class="holographic-display">
-            <div class="portal-header">
-                <h1>DISCORD REDIRECT INITIATED</h1>
-                <p>Connecting you to our Discord server...</p>
+            <h1>JOIN OUR DISCORD</h1>
+            <div class="discord-widget" id="discord-widget"></div>
+            <div class="countdown">
+                <span id="countdown">5</span>
             </div>
-
-            <div class="discord-widget">
-                <!-- Discord widget will appear here -->
-            </div>
-
-            <div class="countdown-display">
-                <div class="quantum-circle"></div>
-                <div class="countdown-number" id="countdown">5</div>
-            </div>
-
-            <p class="redirect-message">
-                You will be redirected automatically in a few seconds.
-            </p>
-
-            <div class="portal-actions">
-                <button class="quantum-button" id="instant-jump">
-                    Join Now
-                </button>
-            </div>
-        </div>
-
-        <div class="status-display">
-            <div class="status-indicator"></div>
-            <span>Wormhole stability: 98%</span>
+            <button id="instant-jump" class="join-button">JOIN NOW</button>
         </div>
     </div>
-
-    <div class="wormhole-effect" id="wormhole"></div>
-
+    <div class="wormhole" id="wormhole"></div>
     <script src="script.js"></script>
 </body>
 </html>
