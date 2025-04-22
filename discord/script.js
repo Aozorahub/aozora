@@ -1,115 +1,83 @@
 // Configuration
 const config = {
-    discordUrl: "https://discord.gg/ftap",
-    countdownStart: 5,
-    particleCount: 150,
-    serverId: "1278024817752150016"
+    discordUrl: "https://discord.gg/EXAMPLE",
+    serverId: "YOUR_SERVER_ID",
+    countdownFrom: 5
 };
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    // DOM Elements
-    let countdown = config.countdownStart;
+    // Load Discord widget
+    document.getElementById('discord-widget').innerHTML = `
+        <iframe src="https://discord.com/widget?id=${config.serverId}&theme=dark" 
+                width="350" height="400" 
+                allowtransparency="true" 
+                frameborder="0"></iframe>
+    `;
+
+    // Countdown functionality
+    let countdown = config.countdownFrom;
     const countdownElement = document.getElementById('countdown');
-    const instantBtn = document.getElementById('instant-jump');
     const wormhole = document.getElementById('wormhole');
-
-    // Load Discord Widget
-    function loadDiscordWidget() {
-        const widgetContainer = document.querySelector('.discord-widget');
-        widgetContainer.innerHTML = `
-            <iframe
-                src="https://discord.com/widget?id=${config.serverId}&theme=dark"
-                width="350"
-                height="400"
-                allowtransparency="true"
-                frameborder="0"
-            ></iframe>
-        `;
-    }
-
-    // Countdown Function
+    
     function updateCountdown() {
         countdownElement.textContent = countdown;
-        
         if (countdown <= 0) {
-            initiateWormhole();
+            redirect();
         } else {
             countdown--;
             setTimeout(updateCountdown, 1000);
         }
     }
-
-    // Redirect Function
-    function initiateWormhole() {
+    
+    function redirect() {
         wormhole.style.opacity = '1';
         setTimeout(() => {
             window.location.href = config.discordUrl;
         }, 1000);
     }
-
-    // Particle Animation
+    
+    document.getElementById('instant-jump').addEventListener('click', redirect);
+    
+    // Particle animation
     const canvas = document.getElementById('quantum-portal');
     const ctx = canvas.getContext('2d');
     
-    function setupCanvas() {
+    function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     }
     
-    setupCanvas();
-
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    
     const particles = [];
-    class Particle {
-        constructor() {
-            this.reset();
-            this.y = Math.random() * canvas.height;
-        }
-
-        reset() {
-            this.x = Math.random() * canvas.width;
-            this.y = -20;
-            this.size = Math.random() * 3 + 1;
-            this.speed = Math.random() * 3 + 1;
-            this.opacity = Math.random() * 0.5 + 0.3;
-        }
-
-        update() {
-            this.y += this.speed;
-            if (this.y > canvas.height) this.reset();
-        }
-
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-            ctx.fill();
-        }
-    }
-
-    // Initialize Particles
-    function initParticles() {
-        for (let i = 0; i < config.particleCount; i++) {
-            particles.push(new Particle());
-        }
-    }
-
-    function animateParticles() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(p => {
-            p.update();
-            p.draw();
+    for (let i = 0; i < 100; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 3 + 1,
+            speed: Math.random() * 2 + 1,
+            opacity: Math.random() * 0.5 + 0.1
         });
-        requestAnimationFrame(animateParticles);
     }
-
-    // Event Listeners
-    instantBtn.addEventListener('click', initiateWormhole);
-    window.addEventListener('resize', setupCanvas);
-
-    // Start everything
-    loadDiscordWidget();
-    initParticles();
-    animateParticles();
+    
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        particles.forEach(p => {
+            p.y += p.speed;
+            if (p.y > canvas.height) p.y = -10;
+            
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
+            ctx.fill();
+        });
+        
+        requestAnimationFrame(animate);
+    }
+    
+    animate();
     updateCountdown();
 });
