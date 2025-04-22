@@ -3,7 +3,30 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Discord server...</title>
+    <title>Join Our Discord Server</title>
+    
+    <!-- Open Graph / Discord Embed Meta Tags -->
+    <meta property="og:title" content="Join Our Discord Server!">
+    <meta property="og:description" content="Connect with our awesome community.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/discord">
+    <meta property="og:image" content="https://yourwebsite.com/images/discord-preview.png">
+    <meta property="og:site_name" content="Our Community">
+    <meta name="theme-color" content="#5865F2">
+    
+    <!-- Discord Widget Styling -->
+    <style>
+        .discord-widget {
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .discord-widget iframe {
+            border: none;
+        }
+    </style>
+    
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/hubot-sans">
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/space-mono">
     <link rel="stylesheet" href="styles.css" />
@@ -16,6 +39,17 @@
             <div class="portal-header">
                 <h1>DISCORD REDIRECT INITIATED</h1>
                 <p>Connecting you to the Discord server...</p>
+            </div>
+
+            <!-- Discord Widget を表示 -->
+            <div class="discord-widget">
+                <iframe
+                    src="https://discord.com/widget?id=YOUR_SERVER_ID&theme=dark"
+                    width="350"
+                    height="400"
+                    allowtransparency="true"
+                    frameborder="0"
+                ></iframe>
             </div>
 
             <div class="countdown-display">
