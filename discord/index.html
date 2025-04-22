@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord Server Join</title>
+    <title>Aozora CLUB Discord Server</title>
+    
+    <!-- Discord Open Graph Meta Tags -->
+    <meta property="og:title" content="Aozora CLUB / 3K+">
+    <meta property="og:description" content="Join our Discord community!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/discord">
+    <meta property="og:image" content="https://yourdomain.com/server-image.png">
+    
+    <!-- Discord Specific Meta Tags -->
+    <meta name="discord:invite" content="your-invite-code">
+    <meta name="discord:server" content="Aozora CLUB">
+    <meta name="discord:membersOnline" content="168">
+    <meta name="discord:membersTotal" content="4015">
+    
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
 </head>
@@ -12,7 +26,17 @@
     <div class="portal-container">
         <div class="holographic-display">
             <h1>JOIN OUR DISCORD</h1>
-            <div class="discord-widget" id="discord-widget"></div>
+            <div class="discord-widget">
+                <!-- This will show the server info like in your image -->
+                <div class="discord-server-card">
+                    <h2>Aozora CLUB / 3K+</h2>
+                    <div class="server-stats">
+                        <span class="online">168人がオンライン</span>
+                        <span class="total">●4,015人</span>
+                    </div>
+                    <div class="joined-status">参加しました</div>
+                </div>
+            </div>
             <div class="countdown">
                 <span id="countdown">5</span>
             </div>
