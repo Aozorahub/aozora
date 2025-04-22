@@ -67,3 +67,39 @@ canvas {
     border-radius: 8px;
     overflow: hidden;
 }
+
+.discord-server-card {
+    background: rgba(32, 34, 37, 0.8);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 20px 0;
+    color: white;
+    border-left: 4px solid #5865F2;
+    font-family: 'Space Mono', monospace;
+}
+
+.discord-server-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.server-stats {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.online {
+    color: #3ba55c;
+}
+
+.total {
+    color: #b9bbbe;
+}
+
+.joined-status {
+    color: #b9bbbe;
+    font-size: 0.8em;
+}
