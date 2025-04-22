@@ -1,49 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aozora CLUB Discord Server</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Join Our Discord Server</title>
     
-    <!-- Discord Open Graph Meta Tags -->
-    <meta property="og:title" content="Aozora CLUB / 3K+">
-    <meta property="og:description" content="Join our Discord community!">
+    <!-- Open Graph / Discord Embed Meta Tags -->
+    <meta property="og:title" content="Join Our Discord Server!">
+    <meta property="og:description" content="Connect with our awesome community.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://discord.gg/ftap">
-    <meta property="og:image" content="https://i.pinimg.com/originals/7a/63/d4/7a63d4c91a83613b8088c9cde3f3ceaf.gif">
+    <meta property="og:url" content="https://yourwebsite.com/discord">
+    <meta property="og:image" content="https://yourwebsite.com/images/discord-preview.png">
+    <meta property="og:site_name" content="Our Community">
+    <meta name="theme-color" content="#5865F2">
     
-    <!-- Discord Specific Meta Tags -->
-    <meta name="discord:invite" content="discord.gg/ftap">
-    <meta name="discord:server" content="Aozora CLUB">
-    <meta name="discord:membersOnline" content="168">
-    <meta name="discord:membersTotal" content="4015">
+    <!-- Discord Widget Styling -->
+    <style>
+        .discord-widget {
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .discord-widget iframe {
+            border: none;
+        }
+    </style>
     
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/hubot-sans">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/space-mono">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <canvas id="quantum-portal"></canvas>
+
     <div class="portal-container">
         <div class="holographic-display">
-            <h1>JOIN OUR DISCORD</h1>
+            <div class="portal-header">
+                <h1>DISCORD REDIRECT INITIATED</h1>
+                <p>Connecting you to the Discord server...</p>
+            </div>
+
+            <!-- Discord Widget を表示 -->
             <div class="discord-widget">
-                <!-- This will show the server info like in your image -->
-                <div class="discord-server-card">
-                    <h2>Aozora CLUB / 3K+</h2>
-                    <div class="server-stats">
-                        <span class="online">168人がオンライン</span>
-                        <span class="total">●4,015人</span>
-                    </div>
-                    <div class="joined-status">参加しました</div>
-                </div>
+                <iframe
+                    src="https://discord.com/widget?id=YOUR_SERVER_ID&theme=dark"
+                    width="350"
+                    height="400"
+                    allowtransparency="true"
+                    frameborder="0"
+                ></iframe>
             </div>
-            <div class="countdown">
-                <span id="countdown">5</span>
+
+            <div class="countdown-display">
+                <div class="quantum-circle"></div>
+                <div class="countdown-number" id="countdown">5</div>
             </div>
-            <button id="instant-jump" class="join-button">JOIN NOW</button>
+
+            <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.85;">
+                You will be redirected to Discord in a few seconds.
+            </p>
+
+            <div class="portal-actions">
+                <button class="quantum-button" id="instant-jump">
+                    Jump to Discord Now
+                </button>
+            </div>
+        </div>
+
+        <div class="status-display">
+            <div class="status-indicator"></div>
+            <span>Wormhole stability: 98%</span>
         </div>
     </div>
-    <div class="wormhole" id="wormhole"></div>
+
+    <div class="wormhole-effect" id="wormhole"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
